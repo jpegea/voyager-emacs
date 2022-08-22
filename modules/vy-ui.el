@@ -15,7 +15,9 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package beacon
-  :init (beacon-mode t))
+(use-package pulsar
+  :init (pulsar-global-mode t)
+  :custom
+  (pulsar-face 'pulsar-blue))
 
 (provide 'vy-ui)
