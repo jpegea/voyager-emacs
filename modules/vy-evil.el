@@ -17,7 +17,8 @@
   (evil-want-keybinding nil)
   (evil-want-C-u-scroll t)
   (evil-want-C-d-scroll t)
-  (evil-respect-visual-line-mode t))
+  (evil-respect-visual-line-mode t)
+  (evil-undo-system 'undo-fu))
 
 (use-package evil-collection
   :init (evil-collection-init))
