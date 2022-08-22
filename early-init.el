@@ -5,9 +5,10 @@
 (setq gc-cons-threshold (* 50 1000 1000))
 
 ;; Tema predeterminat
-(setq modus-themes-mode-line '(borderless accented))
-(load-theme 'modus-vivendi t)
-;;(load-theme 'modus-operandi t)
+(when (or (>= 28.1 (string-to-number emacs-version))
+	  (package-installed-p 'modus-themes))
+  (setq modus-themes-mode-line '(borderless accented))
+  (load-theme 'modus-vivendi t))
 
 ;; Netejar UI
 (setq inhibit-startup-message t)

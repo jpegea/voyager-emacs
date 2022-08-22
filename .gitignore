@@ -28,3 +28,6 @@ var/
 .cache/
 .lsp-session*
 gotools/
+.pat
+transient/*
+transient/
