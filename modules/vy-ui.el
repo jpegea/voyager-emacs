@@ -16,8 +16,6 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pulsar
-  :init (pulsar-global-mode t)
-  :custom
-  (pulsar-face 'pulsar-blue))
+  :init (pulsar-global-mode t))
 
 (provide 'vy-ui)
