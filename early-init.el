@@ -19,6 +19,13 @@
 
 (setq ring-bell-function 'ignore)
 
+;; Per a millorar el rendiment
+(setq initial-major-mode 'fundamental-mode)
+;; (setq initial-scratch-message
+;;       "Benvingut a Voyager Emacs!\n\n")
+(setq initial-scratch-message
+      "Aquest buffer no es guardarà\n\n")
+
 (defvar voyager-config-path
   (expand-file-name ".voyager-emacs" (getenv "HOME"))
   "The voyager's configuration folder.")

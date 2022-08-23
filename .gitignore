@@ -31,3 +31,5 @@ gotools/
 .pat
 transient/*
 transient/
+bookmarks
+projects

@@ -18,4 +18,27 @@
 (use-package pulsar
   :init (pulsar-global-mode t))
 
+(global-set-key (kbd "C-c l") 'display-line-numbers-mode)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+
+  :custom
+  (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")
+  (dashboard-startup-banner 'logo)
+  (dashboard-center-content t)
+
+  (dashboard-items '((recents . 5)
+		     (bookmarks . 5)))
+
+  ;;(dashboard-set-heading-icons t)
+  ;;(dashboard-set-file-icons t)
+
+  (dashboard-item-names '(("Recent Files:" . "Fitxers recents:")
+			  ("Bookmarks:" . "Marcadors:")))
+  (dashboard-set-init-info nil)
+  (dashboard-show-shortcuts nil))
+
 (provide 'vy-ui)

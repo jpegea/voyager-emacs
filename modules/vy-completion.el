@@ -13,6 +13,8 @@
 (use-package consult
   :bind
   ("C-s" . consult-line)
+  ("C-c g" . consult-goto-line)
+  ("C-c r" . consult-ripgrep)
   (:map minibuffer-local-map
 	("C-r" . consult-history)))
 
@@ -25,5 +27,7 @@
 (use-package yasnippet
   :config (yas-reload-all)
   :hook (LaTeX-mode . yas-minor-mode))
+
+(use-package yasnippet-snippets)
 
 (provide 'vy-completion)

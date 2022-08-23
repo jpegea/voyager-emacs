@@ -28,13 +28,9 @@
 (setq make-backup-files nil) ;; OJO
 
 (use-package undo-fu
-  :bind
-  ("C-z" . undo-fu-only-undo)
-  ("C-S-z" . undo-fu-only-redo)
   :config
   (setq undo-limit 6710886400) ;; 64mb.
   (setq undo-strong-limit 100663296) ;; 96mb.
-  (setq undo-outer-limit 1006632960) ;; 960mb.
-  )
+  (setq undo-outer-limit 1006632960)) ;; 960mb.
 
 (provide 'vy-defaults)
