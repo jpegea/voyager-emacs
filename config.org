@@ -1,0 +1,67 @@
+* Voyager Emacs
+
+Increase the GC threshold for faster startup
+The default is 800 kilobytes.  Measured in bytes.
+
+#+begin_src emacs-lisp :tangle yes
+  (setq gc-cons-threshold (* 50 1000 1000))
+#+end_src
+
+Anem també a millorar el rendiment canviant el buffer =scratch= al
+mode fundamental.
+
+#+begin_src emacs-lisp :tangle yes
+  (setq initial-major-mode 'fundamental-mode)
+  (setq initial-scratch-message "Fes en este buffer el que et done la gana\n\n")
+#+end_src
+
+** Paquets
+
+#+begin_src emacs-lisp :tangle yes
+  (require 'package)
+
+  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			   ("org" . "https://orgmode.org/elpa/")
+			   ("elpa" . "https://elpa.gnu.org/packages/")))
+
+  (package-initialize)
+  (unless package-archive-contents
+    (package-refresh-contents))
+#+end_src
+
+Utilitzem =use-package=.
+
+#+begin_src emacs-lisp :tangle yes
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+#+end_src
+
+** Algunes variables
+
+#+begin_src emacs-lisp :tangle yes
+  (use-package doom-themes)
+  (defvar vy/tema
+    (if (>= 28.1 (string-to-number emacs-version))
+	'modus-vivendi
+      'doom-gruvbox)
+    "Canvia aquesta variable per a personatlitzar el tema.")
+#+end_src
+
+#+begin_src emacs-lisp :tangle yes
+  (defvar vy/IS-TERMUX nil
+    "non-nil si estem en Android")
+#+end_src
+
+#+begin_src emacs-lisp :tangle yes
+  (defvar voyager-config-path
+    (expand-file-name ".voyager-emacs" (getenv "HOME"))
+    "The voyager's configuration folder.")
+
+  (add-to-list 'load-path (expand-file-name voyager-config-path))
+
+  (unless (file-exists-p voyager-config-path)
+    (mkdir voyager-config-path t))
+ #+end_src

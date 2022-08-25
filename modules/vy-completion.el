@@ -13,8 +13,7 @@
 (use-package consult
   :bind
   ("C-s" . consult-line)
-  ("C-c g" . consult-goto-line)
-  ("C-c r" . consult-ripgrep)
+  ("M-g g" . consult-goto-line)
   (:map minibuffer-local-map
 	("C-r" . consult-history)))
 
@@ -23,6 +22,13 @@
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
+
+(use-package which-key
+  :diminish which-key-mode
+  :config
+  (which-key-mode)
+  :custom
+  (which-key-idle-delay 1))
 
 (use-package yasnippet
   :config (yas-reload-all)

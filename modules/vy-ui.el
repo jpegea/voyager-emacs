@@ -18,26 +18,32 @@
 (use-package pulsar
   :init (pulsar-global-mode t))
 
-(global-set-key (kbd "C-c l") 'display-line-numbers-mode)
+(use-package projectile
+  :init (projectile-mode t)
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map)))
+
+
+(setq dashboard-buffer-name "Voyager")
 
 (use-package dashboard
-  :ensure t
+  :after projectile
   :config
   (dashboard-setup-startup-hook)
 
   :custom
   (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")
-  (dashboard-startup-banner 'logo)
+  (dashboard-startup-banner (expand-file-name "logo/Voyager.png" user-emacs-directory))
   (dashboard-center-content t)
-
+  
   (dashboard-items '((recents . 5)
-		     (bookmarks . 5)))
+		     (projects . 5)))
 
   ;;(dashboard-set-heading-icons t)
   ;;(dashboard-set-file-icons t)
 
   (dashboard-item-names '(("Recent Files:" . "Fitxers recents:")
-			  ("Bookmarks:" . "Marcadors:")))
+			  ("Projects:" . "Projectes:")))
   (dashboard-set-init-info nil)
   (dashboard-show-shortcuts nil))
 

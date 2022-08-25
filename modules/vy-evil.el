@@ -18,7 +18,7 @@
   (evil-want-C-u-scroll t)
   (evil-want-C-d-scroll t)
   (evil-respect-visual-line-mode t)
-  (evil-undo-system 'undo-fu))
+  (evil-undo-system 'undo-redo)) ;; from Emacs 28
 
 (use-package evil-collection
   :init (evil-collection-init))
@@ -27,5 +27,10 @@
   :init (evil-escape-mode t)
   :custom
   (evil-escape-key-sequence "jk"))
+
+(use-package evil-surround
+  :ensure t
+  :init
+  (global-evil-surround-mode 1))
 
 (provide 'vy-evil)

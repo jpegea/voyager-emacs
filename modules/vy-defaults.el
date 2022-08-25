@@ -22,15 +22,8 @@
 (column-number-mode t)
 
 (electric-pair-mode t)
-
 (show-paren-mode t)
 
 (setq make-backup-files nil) ;; OJO
-
-(use-package undo-fu
-  :config
-  (setq undo-limit 6710886400) ;; 64mb.
-  (setq undo-strong-limit 100663296) ;; 96mb.
-  (setq undo-outer-limit 1006632960)) ;; 960mb.
 
 (provide 'vy-defaults)
