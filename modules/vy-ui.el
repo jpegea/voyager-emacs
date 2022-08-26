@@ -32,7 +32,8 @@
   (dashboard-setup-startup-hook)
 
   :custom
-  (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")
+  ;; (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")
+  (dashboard-banner-logo-title "Welcome to Voyager Emacs!")
   (dashboard-startup-banner (expand-file-name "logo/Voyager.png" user-emacs-directory))
   (dashboard-center-content t)
   
@@ -42,8 +43,8 @@
   ;;(dashboard-set-heading-icons t)
   ;;(dashboard-set-file-icons t)
 
-  (dashboard-item-names '(("Recent Files:" . "Fitxers recents:")
-			  ("Projects:" . "Projectes:")))
+  ;; (dashboard-item-names '(("Recent Files:" . "Fitxers recents:")
+  ;; 			  ("Projects:" . "Projectes:")))
   (dashboard-set-init-info nil)
   (dashboard-show-shortcuts nil))
 
