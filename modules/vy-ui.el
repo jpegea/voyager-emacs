@@ -15,9 +15,10 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(unless ON-WINDWS
-  (use-package pulsar
-    :init (pulsar-global-mode t)))
+(use-package pulsar
+  :init
+  (unless ON-WINDOWS
+    (pulsar-global-mode t)))
 
 (use-package projectile
   :init (projectile-mode t)
