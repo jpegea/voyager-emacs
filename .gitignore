@@ -8,8 +8,11 @@ bookmarks
 projectile-bookmarks.eld
 
 server/
+.lsp-session-*
 transient/
 
 eshell/
 elpa/
 .cache/
+
+.pat
