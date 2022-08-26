@@ -37,6 +37,6 @@
   :config (yas-reload-all)
   :hook (python-mode . yas-minor-mode))
 
-(use-package lsp-pyright)
+;; (use-package lsp-pyright)
 
 (provide 'vy-python)
