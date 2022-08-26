@@ -31,7 +31,7 @@
 
 ;; Tema predeterminat
 (use-package doom-themes)
-(setq modus-themes-mode-line '(borderless accented))
+(defvar modus-themes-mode-line '(borderless accented))
 (defvar vy/theme
   (if (>= 28.1 (string-to-number emacs-version))
       'modus-vivendi
@@ -39,10 +39,12 @@
   "Voyager Emacs theme.")
 
 ;; Platform
-(defconst ON-LINUX   (eq system-type 'gnu/linux))
-(defconst ON-MAC     (eq system-type 'darwin))
-(defconst ON-BSD     (or ON-MAC (eq system-type 'berkeley-unix)))
-(defconst ON-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
+(defconst ON-LINUX (eq system-type 'gnu/linux)
+  "Non-nil if running on GNU/Linux.")
+(defconst ON-MAC (eq system-type 'darwin)
+  "Non-nil if running on Mac.")
+(defconst ON-WINDOWS (memq system-type '(windows-nt ms-dos cygwin))
+  "Non-nil if running on Windows.")
 
 ;; If you're using Termux change this in your personal config.
 (setq-default ON-TERMUX nil)

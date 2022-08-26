@@ -15,16 +15,14 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package pulsar
-  :init (pulsar-global-mode t))
+(unless ON-WINDWS
+  (use-package pulsar
+    :init (pulsar-global-mode t)))
 
 (use-package projectile
   :init (projectile-mode t)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
-
-
-(setq dashboard-buffer-name "Voyager")
 
 (use-package dashboard
   :after projectile
