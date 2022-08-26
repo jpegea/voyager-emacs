@@ -26,4 +26,8 @@
 
 (setq make-backup-files nil) ;; OJO
 
+;; Provisionalment ací.
+;; TODO: canviar açò de puesto, ací estorba.
+(use-package magit)
+
 (provide 'vy-defaults)
