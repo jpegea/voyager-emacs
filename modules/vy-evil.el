@@ -29,8 +29,9 @@
   (evil-escape-key-sequence "jk"))
 
 (use-package evil-surround
+  :defer t
   :ensure t
   :init
-  (global-evil-surround-mode 1))
+  (add-hook 'prog-mode-hook 'evil-surround-mode))
 
 (provide 'vy-evil)

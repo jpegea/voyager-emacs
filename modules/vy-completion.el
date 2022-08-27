@@ -31,9 +31,11 @@
   (which-key-idle-delay 1))
 
 (use-package yasnippet
+  :defer t
   :config (yas-reload-all)
   :hook (LaTeX-mode . yas-minor-mode))
 
-(use-package yasnippet-snippets)
+(use-package yasnippet-snippets
+  :after yasnippet)
 
 (provide 'vy-completion)

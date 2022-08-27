@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package lsp-mode
+  :defer t
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
@@ -10,6 +11,7 @@
   (lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-ui
+  :defer t ;; Maybe not necessary?
   :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode)
   :config
@@ -34,6 +36,7 @@
   (company-idle-delay 0.0))
 
 (use-package yasnippet
+  :defer t
   :config (yas-reload-all)
   :hook (python-mode . yas-minor-mode))
 
