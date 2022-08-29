@@ -6,6 +6,7 @@
 recentf
 bookmarks
 projectile-bookmarks.eld
+srecode-map.el
 
 server/
 .lsp-session-*

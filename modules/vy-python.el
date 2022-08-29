@@ -24,6 +24,7 @@
   :after (lsp-mode treemacs))
 
 (use-package company
+  :defer t
   :after lsp-mode
   :hook (lsp-mode . company-mode)
   :bind
@@ -39,7 +40,5 @@
   :defer t
   :config (yas-reload-all)
   :hook (python-mode . yas-minor-mode))
-
-;; (use-package lsp-pyright)
 
 (provide 'vy-python)
