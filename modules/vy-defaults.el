@@ -30,4 +30,7 @@
 ;; TODO: canviar açò de puesto, ací estorba.
 (use-package magit)
 
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'hl-line-mode)
+
 (provide 'vy-defaults)
