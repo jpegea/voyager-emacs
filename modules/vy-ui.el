@@ -18,8 +18,7 @@
 
 (use-package pulsar
   :init
-  (unless ON-WINDOWS
-    (pulsar-global-mode t)))
+  (pulsar-global-mode t))
 
 (use-package projectile
   :init (projectile-mode t)

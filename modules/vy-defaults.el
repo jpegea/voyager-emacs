@@ -30,6 +30,7 @@
 ;; TODO: canviar açò de puesto, ací estorba.
 (use-package magit)
 
+(setq display-line-numbers-type 'relative)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
