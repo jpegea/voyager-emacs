@@ -1,6 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package evil
+  :defer t
+  
   :init (evil-mode t)
 
   :bind
@@ -18,12 +20,14 @@
   (evil-want-C-u-scroll t)
   (evil-want-C-d-scroll t)
   (evil-respect-visual-line-mode t)
-  (evil-undo-system 'undo-redo)) ;; from Emacs 28
+  (evil-undo-system 'undo-redo)) ;; Emacs 28 best emacs version
 
 (use-package evil-collection
+  :defer t
   :init (evil-collection-init))
 
 (use-package evil-escape
+  :defer t
   :init (evil-escape-mode t)
   :custom
   (evil-escape-key-sequence "jk"))

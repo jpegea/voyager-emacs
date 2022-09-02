@@ -3,6 +3,9 @@
 ;; Use spaces instead tabs
 (setq indent-tabs-mode nil)
 
+;; Do not make backup files
+(setq make-backup-files nil) ;; Ojo
+
 ;; Use "y" and "n" to confirm/negate prompt instead of "yes" and "no"
 ;; Using `advice' here to make it easy to reverse in custom
 ;; configurations with `(advice-remove 'yes-or-no-p #'y-or-n-p)'
@@ -13,25 +16,9 @@
     (setq use-short-answers t)
   (advice-add 'yes-or-no-p :override #'y-or-n-p))
 
-;; Make scrolling less stuttered (setq auto-window-vscroll nil)
-(customize-set-variable 'fast-but-imprecise-scrolling t)
-(customize-set-variable 'scroll-conservatively 101)
-(customize-set-variable 'scroll-margin 0)
-(customize-set-variable 'scroll-preserve-screen-position t)
 
+;; Show column number and matching parens
 (column-number-mode t)
-
-(electric-pair-mode t)
 (show-paren-mode t)
-
-(setq make-backup-files nil) ;; OJO
-
-;; Provisionalment ací.
-;; TODO: canviar açò de puesto, ací estorba.
-(use-package magit)
-
-(setq display-line-numbers-type 'relative)
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'prog-mode-hook 'hl-line-mode)
 
 (provide 'vy-defaults)

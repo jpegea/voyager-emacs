@@ -1,26 +1,28 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package all-the-icons
+  :defer t
   :if (display-graphic-p))
 
 (use-package doom-modeline
+  :defer t
   :init (doom-modeline-mode t)
   :custom
-  (doom-modeline-buffer-encoding nil)
+  (doom-modeline-buffer-encoding t)
   (doom-modeline-minor-modes nil)
   (doom-modeline-enable-word-count t))
-
-(use-package doom-themes)
 
 (use-package rainbow-delimiters
   :defer t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pulsar
+  :defer t
   :init
   (pulsar-global-mode t))
 
 (use-package projectile
+  :defer t
   :init (projectile-mode t)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))

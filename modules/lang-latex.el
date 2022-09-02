@@ -9,9 +9,8 @@
   (TeX-master nil)
   :hook
   (LaTeX-mode . turn-on-auto-fill)
-  (LaTeX-mode . turn-on-reftex))
+  (LaTeX-mode . turn-on-reftex)
+  (LaTeX-mode . yas-minor-mode))
 
-;; Company?
-
-(provide 'vy-latex)
+(provide 'lang-latex)
 

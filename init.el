@@ -1,27 +1,36 @@
 ;; -*- lexical-binding: t; -*-
 
-;; Clean UI
-(unless ON-TERMUX
-  (tool-bar-mode -1)
-  (scroll-bar-mode -1)
-  ;; (set-fringe-mode 10)
-  )
-
-(menu-bar-mode -1)
-
-(setq ring-bell-function 'ignore)
 
 ;; Load Voyager's theme
+(defvar modus-themes-mode-line '(borderless accented))
 (load-theme vy/theme t)
 
+
 ;; Startup
-
-(setq inhibit-startup-message t)
-
 (add-hook 'emacs-startup-hook
 	  (lambda ()
 	    (message "Welcome Voyager! Emacs loaded in %s."
 		     (emacs-init-time))))
+
+
+;; Packages
+(require 'package)
+
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")
+			 ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+
+;; Use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 
 ;; Add the modules folder to the path
@@ -52,6 +61,7 @@
 (setq custom-file (expand-file-name "custom.el" voyager-config-path))
 (when (file-exists-p custom-file)
   (load custom-file nil 'nomessage))
+
 
 ;; Make GC pauses faster by decreasing the threshold.
 (setq gc-cons-threshold (* 2 1000 1000))

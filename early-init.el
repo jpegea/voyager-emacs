@@ -4,6 +4,7 @@
 ;; The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 
+(setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
 (setq initial-scratch-message "Fes en este buffer el que et done la gana\n\n")
 
@@ -11,31 +12,12 @@
 (set-default-coding-systems 'utf-8)
 (customize-set-variable 'large-file-warning-threshold 100000000) ;; change to ~100 MB
 
-;; Packages
-(require 'package)
-
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
-
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Use-package
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 ;; Tema predeterminat
-(use-package doom-themes)
-(defvar modus-themes-mode-line '(borderless accented))
 (defvar vy/theme
   (if (>= 28.1 (string-to-number emacs-version))
       'modus-vivendi
-    'doom-gruvbox)
+    'wombat)
   "Voyager Emacs theme.")
 
 ;; Platform
@@ -47,7 +29,8 @@
   "Non-nil if running on Windows.")
 
 ;; If you're using Termux change this in your personal config.
-(setq-default ON-TERMUX nil)
+(defvar ON-TERMUX nil
+  "Non-nil if running on Termux.")
 
 ;; Personal config path
 (defvar voyager-config-path
@@ -63,3 +46,14 @@
 (let ((early-config-path (expand-file-name "early-init.el" voyager-config-path)))
   (when (file-exists-p early-config-path)
     (load early-config-path nil 'nomessage)))
+
+
+;; Clean UI
+(unless ON-TERMUX
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  ;; (set-fringe-mode 10)
+  )
+(menu-bar-mode -1)
+
+(setq ring-bell-function 'ignore)
