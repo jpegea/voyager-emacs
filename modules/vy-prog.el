@@ -5,7 +5,10 @@
 			    (hl-line-mode)
 			    (electric-pair-mode)))
 
-(use-package magit)
+(use-package magit
+  :defer t)
+
+(require 'git-commit)
 
 (use-package flycheck
   :defer t)
