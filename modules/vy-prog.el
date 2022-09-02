@@ -5,8 +5,7 @@
 			    (hl-line-mode)
 			    (electric-pair-mode)))
 
-(use-package magit
-  :defer t)
+(use-package magit)
 
 (use-package flycheck
   :defer t)
