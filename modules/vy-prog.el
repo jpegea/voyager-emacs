@@ -43,11 +43,16 @@
 
 (use-package treemacs
   :defer t
-  :bind ("C-c o p" . treemacs))
+  :ensure treemacs-all-the-icons
+  :ensure treemacs-projectile
+  :config
+  (require 'treemacs-all-the-icons)
+  (treemacs-load-theme "all-the-icons")
+  :bind ("C-c o" . treemacs)
+  :custom (treemacs-width 27))
 
 (use-package lsp-treemacs
   :defer t
   :after (lsp-mode treemacs))
-
 
 (provide 'vy-prog)
