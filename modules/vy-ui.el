@@ -31,7 +31,7 @@
   :defer t
   :after projectile
   :init
-  (when (or ON-LINUX ON-WINDOWS)
+  (unless (eq window-system nil)
     (dashboard-setup-startup-hook))
 
   :custom
