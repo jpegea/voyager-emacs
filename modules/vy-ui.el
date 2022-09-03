@@ -28,9 +28,11 @@
 	      ("C-c p" . projectile-command-map)))
 
 (use-package dashboard
+  :defer t
   :after projectile
-  :config
-  (dashboard-setup-startup-hook)
+  :init
+  (when (or ON-LINUX ON-WINDOWS)
+    (dashboard-setup-startup-hook))
 
   :custom
   ;; (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")
