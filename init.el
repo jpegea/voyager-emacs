@@ -2,7 +2,7 @@
 
 
 ;; Load Voyager's theme
-(defvar modus-themes-mode-line '(borderless accented))
+(setq modus-themes-mode-line '(borderless accented))
 (load-theme vy/theme t)
 
 

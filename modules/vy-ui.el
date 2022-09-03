@@ -19,7 +19,8 @@
 (use-package pulsar
   :defer t
   :init
-  (pulsar-global-mode t))
+  (when ON-LINUX
+    (pulsar-global-mode t)))
 
 (use-package projectile
   :defer t
