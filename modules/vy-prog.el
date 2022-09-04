@@ -5,6 +5,8 @@
 			    (hl-line-mode)
 			    (electric-pair-mode)))
 
+(add-hook 'emacs-lisp-mode-hook #'prettify-symbols-mode)
+
 (use-package magit
   :defer t)
 
@@ -57,5 +59,9 @@
 (use-package lsp-treemacs
   :defer t
   :after (lsp-mode treemacs))
+
+(use-package tree-sitter
+  :defer t
+  :ensure tree-sitter-langs)
 
 (provide 'vy-prog)
