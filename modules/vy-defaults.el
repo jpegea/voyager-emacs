@@ -21,4 +21,9 @@
 (column-number-mode t)
 (show-paren-mode t)
 
+;; Windows defaults
+(when ON-WINDOWS
+  (use-package powershell
+    :defer t))
+
 (provide 'vy-defaults)
