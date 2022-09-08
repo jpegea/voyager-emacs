@@ -16,7 +16,7 @@
 ;; Tema predeterminat
 (defvar vy/theme
   (if (>= 28.1 (string-to-number emacs-version))
-      'modus-vivendi
+      'modus-operandi
     'wombat)
   "Voyager Emacs theme.")
 

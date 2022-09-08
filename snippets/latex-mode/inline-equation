@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Inline equation 
+# key: ie 
+# --
+
+\$$1\$$0

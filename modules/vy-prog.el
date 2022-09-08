@@ -18,7 +18,8 @@
 (use-package yasnippet
   :defer t
   :ensure yasnippet-snippets
-  :config (yas-reload-all)
+  :config
+  (yas-reload-all)
   :hook
   (lsp-mode . yas-minor-mode))
 
@@ -28,8 +29,9 @@
   :bind
   (:map company-active-map
 	("<tab>" . company-complete-selection))
-  (:map lsp-mode-map
-	("<tab>" . company-indent-or-complete-common)))
+  ;; (:map lsp-mode-map
+  ;; 	("<tab>" . company-indent-or-complete-common))
+  )
 
 (use-package lsp-mode
   :defer t
