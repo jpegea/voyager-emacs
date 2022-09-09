@@ -5,7 +5,6 @@
   :if (display-graphic-p))
 
 (use-package doom-modeline
-  :defer t
   :init (doom-modeline-mode t)
   :custom
   (doom-modeline-buffer-encoding t)
