@@ -30,13 +30,6 @@
 (setq use-package-always-ensure t)
 
 
-(use-package benchmark-init
-  :ensure t
-  :config
-  ;; To disable collection of benchmark data after init is done.
-  (add-hook 'after-init-hook 'benchmark-init/deactivate))
-
-
 ;; auto-update packages
 (use-package auto-package-update
   :defer t
