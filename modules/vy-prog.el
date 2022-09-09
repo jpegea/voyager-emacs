@@ -33,9 +33,8 @@
 
 (use-package lsp-mode
   :defer t
-  :init
-  (setq lsp-keymap-prefix "C-c l")
   :config
+  (setq lsp-keymap-prefix "C-c l")
   (lsp-enable-which-key-integration t)
   :custom
   (lsp-headerline-breadcrumb-enable nil))

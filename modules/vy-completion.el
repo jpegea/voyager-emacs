@@ -8,7 +8,6 @@
 	      ("C-k" . vertico-previous)))
 
 (use-package marginalia
-  :defer t
   :init (marginalia-mode t))
 
 (use-package consult

@@ -30,6 +30,14 @@
 (setq use-package-always-ensure t)
 
 
+;; auto-update packages
+(use-package auto-package-update
+  :defer t
+  :config
+  (add-hook 'auto-package-update-before-hook
+	    (lambda () (message "I will update packages now"))))
+
+
 ;; Add the modules folder to the path
 (add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
 
