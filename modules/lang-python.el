@@ -5,6 +5,6 @@
 			      (tree-sitter-mode)))
 
 (use-package lsp-pyright
-  :defer t)
+  :after lsp)
 
 (provide 'lang-python)

@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package vertico
-  :defer t
   :init (vertico-mode t)
   :custom (vertico-cycle t)
   :bind (:map vertico-map
@@ -13,7 +12,6 @@
   :init (marginalia-mode t))
 
 (use-package consult
-  :defer t
   :bind
   ("C-s" . consult-line)
   ("M-g g" . consult-goto-line)
@@ -22,7 +20,6 @@
 
 (use-package orderless
   :defer t
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))

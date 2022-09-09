@@ -13,7 +13,6 @@
   (doom-modeline-enable-word-count t))
 
 (use-package rainbow-delimiters
-  :defer t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pulsar
@@ -23,13 +22,11 @@
     (pulsar-global-mode t)))
 
 (use-package projectile
-  :defer t
   :init (projectile-mode t)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
 
 (use-package dashboard
-  :defer t
   :after projectile
   :init
   (unless (eq window-system nil)

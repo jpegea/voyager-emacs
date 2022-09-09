@@ -3,7 +3,7 @@
 (add-hook 'prog-mode-hook (lambda ()
 			    (display-line-numbers-mode)
 			    (hl-line-mode)
-			    (electric-pair-mode)))
+			    (electric-pair-local-mode)))
 
 (add-hook 'emacs-lisp-mode-hook #'prettify-symbols-mode)
 
@@ -16,7 +16,6 @@
   :defer t)
 
 (use-package yasnippet
-  :defer t
   :ensure yasnippet-snippets
   :config
   (yas-reload-all)
@@ -24,7 +23,6 @@
   (lsp-mode . yas-minor-mode))
 
 (use-package company
-  :defer t
   :hook (lsp-mode . company-mode)
   :bind
   (:map company-active-map
@@ -43,13 +41,11 @@
   (lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-ui
-  :defer t
   :hook (lsp-mode . lsp-ui-mode)
   :config
   (lsp-ui-doc-enable t))
 
 (use-package treemacs
-  :defer t
   :ensure treemacs-all-the-icons
   :ensure treemacs-projectile
   :config
@@ -59,7 +55,6 @@
   :custom (treemacs-width 27))
 
 (use-package lsp-treemacs
-  :defer t
   :after (lsp-mode treemacs))
 
 (use-package tree-sitter

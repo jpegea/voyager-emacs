@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package evil
-  :defer t
-  
   :init (evil-mode t)
 
   :bind
@@ -35,7 +33,7 @@
 (use-package evil-surround
   :defer t
   :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'evil-surround-mode))
+  :config
+  (global-evil-surround-mode t))
 
 (provide 'vy-evil)
