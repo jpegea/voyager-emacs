@@ -50,7 +50,7 @@
   :config
   (require 'treemacs-all-the-icons)
   (treemacs-load-theme "all-the-icons")
-  :bind ("C-c o" . treemacs)
+  :bind ("C-c o p" . treemacs)
   :custom (treemacs-width 27))
 
 (use-package lsp-treemacs

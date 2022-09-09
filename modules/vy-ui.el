@@ -15,7 +15,7 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pulsar
-  :defer t
+  :defer 0
   :init
   (when ON-LINUX
     (pulsar-global-mode t)))

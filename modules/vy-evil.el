@@ -21,15 +21,18 @@
   (evil-undo-system 'undo-redo)) ;; Emacs 28 best emacs version
 
 (use-package evil-collection
-  :init (evil-collection-init))
+  :defer 0
+  :config (evil-collection-init))
 
 (use-package evil-escape
-  :init (evil-escape-mode t)
+  :defer 0
+  :config (evil-escape-mode t)
   :custom
   (evil-escape-key-sequence "jk"))
 
 (use-package evil-surround
-  :init
+  :defer 0
+  :config
   (global-evil-surround-mode t))
 
 (provide 'vy-evil)
