@@ -29,7 +29,7 @@
   :defer t
 
   :init
-  (if (and vy/welcome window-system)
+  (unless (eq window-system nil)
     (dashboard-setup-startup-hook))
 
   :custom

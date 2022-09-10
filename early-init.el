@@ -21,9 +21,6 @@
     'wombat)
   "Voyager Emacs theme.")
 
-;; Opcions de inici
-(defvar vy/welcome t
-  "When non-nil start with Dashboard.")
 
 ;; Platform
 (defconst ON-LINUX (eq system-type 'gnu/linux)
