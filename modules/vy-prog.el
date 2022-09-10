@@ -8,12 +8,12 @@
 (add-hook 'emacs-lisp-mode-hook #'prettify-symbols-mode)
 
 (use-package magit
-  :defer t)
-
-(require 'git-commit)
+  :defer t
+  :init
+  (require 'git-commit))
 
 (use-package flycheck
-  :defer t)
+  :defer defer t)
 
 (use-package yasnippet
   :ensure yasnippet-snippets
@@ -40,6 +40,7 @@
   (lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-ui
+  :after lsp-mode
   :hook (lsp-mode . lsp-ui-mode)
   :config
   (lsp-ui-doc-enable t))
@@ -47,14 +48,12 @@
 (use-package treemacs
   :ensure treemacs-all-the-icons
   :ensure treemacs-projectile
+  :ensure lsp-treemacs
   :config
   (require 'treemacs-all-the-icons)
   (treemacs-load-theme "all-the-icons")
   :bind ("C-c o p" . treemacs)
   :custom (treemacs-width 27))
-
-(use-package lsp-treemacs
-  :after (lsp-mode treemacs))
 
 (use-package tree-sitter
   :defer t

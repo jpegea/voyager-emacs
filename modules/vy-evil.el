@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package evil
-  :init (evil-mode t)
+  :defer 0
 
   :bind
   (:map evil-insert-state-map
@@ -9,6 +9,8 @@
   ("C-M-u" . universal-argument)
 
   :config
+  (evil-mode t)
+
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
 
@@ -21,18 +23,17 @@
   (evil-undo-system 'undo-redo)) ;; Emacs 28 best emacs version
 
 (use-package evil-collection
-  :defer 0
+  :after evil
   :config (evil-collection-init))
 
 (use-package evil-escape
-  :defer 0
+  :after evil
   :config (evil-escape-mode t)
   :custom
   (evil-escape-key-sequence "jk"))
 
 (use-package evil-surround
-  :defer 0
-  :config
-  (global-evil-surround-mode t))
+  :defer evil
+  :config (global-evil-surround-mode t))
 
 (provide 'vy-evil)

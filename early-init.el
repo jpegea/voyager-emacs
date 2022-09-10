@@ -6,7 +6,7 @@
 
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
-(setq initial-scratch-message "Fes en este buffer el que et done la gana\n\n")
+(setq initial-scratch-message nil)
 
 ;; Set default coding system (especially for Windows)
 (set-default-coding-systems 'utf-8)
@@ -19,6 +19,10 @@
       'modus-operandi
     'wombat)
   "Voyager Emacs theme.")
+
+;; Opcions de inici
+(defvar vy/welcome t
+  "When non-nil start with Dashboard.")
 
 ;; Platform
 (defconst ON-LINUX (eq system-type 'gnu/linux)

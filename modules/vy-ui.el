@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package all-the-icons
-  :defer t
+  :defer 0
   :if (display-graphic-p))
 
 (use-package doom-modeline
@@ -15,20 +15,21 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pulsar
-  :defer 0
+  :defer t
   :init
   (when ON-LINUX
     (pulsar-global-mode t)))
 
 (use-package projectile
-  :init (projectile-mode t)
+  :config (projectile-mode t)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
 
 (use-package dashboard
-  :after projectile
+  :defer t
+
   :init
-  (unless (eq window-system nil)
+  (if (and vy/welcome window-system)
     (dashboard-setup-startup-hook))
 
   :custom

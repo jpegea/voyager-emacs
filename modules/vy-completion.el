@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package vertico
-  :defer 0
   :init (vertico-mode t)
   :custom (vertico-cycle t)
   :bind (:map vertico-map
@@ -20,7 +19,6 @@
 	("C-r" . consult-history)))
 
 (use-package orderless
-  :defer t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
