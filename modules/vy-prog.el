@@ -13,7 +13,7 @@
   (require 'git-commit))
 
 (use-package flycheck
-  :defer defer t)
+  :defer t)
 
 (use-package yasnippet
   :ensure yasnippet-snippets
