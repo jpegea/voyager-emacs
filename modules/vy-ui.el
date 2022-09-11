@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package all-the-icons
-  :defer 0
+  :defer 2
   :if (display-graphic-p))
 
 (use-package doom-modeline

@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package evil
-  :defer 0
+  :defer 1
 
   :bind
   (:map evil-insert-state-map
@@ -33,7 +33,7 @@
   (evil-escape-key-sequence "jk"))
 
 (use-package evil-surround
-  :defer evil
+  :after evil
   :config (global-evil-surround-mode t))
 
 (provide 'vy-evil)
