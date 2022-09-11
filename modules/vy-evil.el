@@ -8,7 +8,7 @@
 	      ("C-g" . evil-normal-state))
   ("C-M-u" . universal-argument)
 
-  :config
+  :init
   (evil-mode t)
 
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
