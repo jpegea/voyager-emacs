@@ -1,7 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package vertico
-  :init (vertico-mode t)
+  :defer 0
+  :config (vertico-mode t)
   :custom (vertico-cycle t)
   :bind (:map vertico-map
 	      ("C-j" . vertico-next)
@@ -9,7 +10,7 @@
 
 (use-package marginalia
   :defer 0
-  :init (marginalia-mode t))
+  :config (marginalia-mode t))
 
 (use-package consult
   :bind
