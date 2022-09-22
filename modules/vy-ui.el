@@ -11,7 +11,8 @@
   :custom
   (doom-modeline-buffer-encoding t)
   (doom-modeline-minor-modes nil)
-  (doom-modeline-enable-word-count t))
+  (doom-modeline-enable-word-count t)
+  (doom-modeline-height 30))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
