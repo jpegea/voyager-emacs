@@ -19,6 +19,7 @@
   :ensure yasnippet-snippets
   :config
   (yas-reload-all)
+  (setq yas-triggers-in-field t)
   :hook
   (lsp-mode . yas-minor-mode))
 

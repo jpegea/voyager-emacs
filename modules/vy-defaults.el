@@ -6,6 +6,9 @@
 ;; Do not make backup files
 (setq make-backup-files nil) ;; Ojo
 
+;; Refresh buffers
+(global-auto-revert-mode)
+
 ;; Use "y" and "n" to confirm/negate prompt instead of "yes" and "no"
 ;; Using `advice' here to make it easy to reverse in custom
 ;; configurations with `(advice-remove 'yes-or-no-p #'y-or-n-p)'

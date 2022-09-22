@@ -30,7 +30,8 @@
 
   :init
   (unless (eq window-system nil)
-    (dashboard-setup-startup-hook))
+    (if vy/welcome
+	(dashboard-setup-startup-hook)))
 
   :custom
   ;; (dashboard-banner-logo-title "Benvingut a Voyager Emacs!")

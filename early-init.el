@@ -21,6 +21,11 @@
     'wombat)
   "Voyager Emacs theme.")
 
+;; Pantalla de benvinguda
+(defvar vy/welcome
+  t
+  "Dashboard on init")
+
 
 ;; Platform
 (defconst ON-LINUX (eq system-type 'gnu/linux)
@@ -56,4 +61,10 @@
 (menu-bar-mode -1)
 (add-to-list 'default-frame-alist '(vertical-scroll-bars))
 
+;; Stop anoying beep
 (setq ring-bell-function 'ignore)
+
+
+;; Load Voyager's theme
+(setq modus-themes-mode-line '(borderless accented))
+(load-theme vy/theme t)

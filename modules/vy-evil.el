@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package evil
-  :defer 1
-
   :bind
   (:map evil-insert-state-map
 	      ("C-g" . evil-normal-state))
