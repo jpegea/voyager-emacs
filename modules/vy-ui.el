@@ -6,6 +6,8 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode t)
+  :config
+  (set-face-attribute 'mode-line nil  :height 120)
   :custom
   (doom-modeline-buffer-encoding t)
   (doom-modeline-minor-modes nil)
