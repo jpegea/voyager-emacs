@@ -1,15 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 (use-package all-the-icons
-  :defer 2
+  :defer 0
   :if (display-graphic-p))
-
-(use-package doom-modeline
-  :init (doom-modeline-mode t)
-  :custom
-  (doom-modeline-buffer-encoding t)
-  (doom-modeline-minor-modes nil)
-  (doom-modeline-enable-word-count t))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))

@@ -26,10 +26,10 @@
 
 (use-package which-key
   :defer 0 
-  :diminish which-key-mode
   :config
   (which-key-mode)
   :custom
-  (which-key-idle-delay 1))
+  (which-key-idle-delay 1)
+  :diminish which-key-mode)
 
 (provide 'vy-completion)

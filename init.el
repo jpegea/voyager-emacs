@@ -57,6 +57,10 @@
 (add-to-list 'load-path (expand-file-name voyager-custom-modules))
 
 
+(use-package diminish
+  :defer t)
+
+
 ;; Personal init.el
 (when (file-exists-p voyager-config-file)
   (load voyager-config-file nil 'nomessage))

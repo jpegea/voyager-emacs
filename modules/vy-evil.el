@@ -22,10 +22,12 @@
 
 (use-package evil-collection
   :after evil
+  :diminish evil-collection-unimpaired-mode
   :config (evil-collection-init))
 
 (use-package evil-escape
   :after evil
+  :diminish evil-escape-mode
   :config (evil-escape-mode t)
   :custom
   (evil-escape-key-sequence "jk"))
