@@ -29,8 +29,6 @@
   ;; To disable collection of benchmark data after init is done.
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-(use-package diminish
-  :defer t)
 
 ;; auto-update packages
 (use-package auto-package-update
@@ -38,6 +36,11 @@
   :config
   (add-hook 'auto-package-update-before-hook
 	    (lambda () (message "I will update packages now"))))
+
+
+;; diminish packages
+(use-package diminish
+  :defer t)
 
 
 ;; Add the modules folder to the path
