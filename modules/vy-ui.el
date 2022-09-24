@@ -18,6 +18,9 @@
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
 
+(use-package minions
+  :config (minions-mode t))
+
 (use-package dashboard
   :defer t
 
