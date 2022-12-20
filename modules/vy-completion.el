@@ -15,6 +15,7 @@
 (use-package consult
   :bind
   ("C-s" . consult-line)
+  ("C-S-s" . isearch-backward)
   ("M-g g" . consult-goto-line)
   (:map minibuffer-local-map
 	("C-r" . consult-history)))

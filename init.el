@@ -38,11 +38,6 @@
 	    (lambda () (message "I will update packages now"))))
 
 
-;; diminish packages
-(use-package diminish
-  :defer t)
-
-
 ;; Add the modules folder to the path
 (add-to-list 'load-path (expand-file-name "modules/" user-emacs-directory))
 

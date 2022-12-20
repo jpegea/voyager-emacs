@@ -9,6 +9,8 @@
 (setq initial-major-mode 'fundamental-mode)
 (setq initial-scratch-message nil)
 
+(setq frame-title-format (list "%b - Voyager Emacs"))
+
 ;; Set default coding system (especially for Windows)
 (set-default-coding-systems 'utf-8)
 (customize-set-variable 'large-file-warning-threshold 100000000) ;; change to ~100 MB
@@ -16,9 +18,9 @@
 
 ;; Tema predeterminat
 (defvar vy/theme
-  (if (>= 28.1 (string-to-number emacs-version))
-      'modus-operandi
-    'wombat)
+  ;; (if (>= 28.1 (string-to-number emacs-version))
+  ;;     'modus-operandi)
+  nil
   "Voyager Emacs theme.")
 
 ;; Pantalla de benvinguda
@@ -67,4 +69,5 @@
 
 ;; Load Voyager's theme
 (setq modus-themes-mode-line '(borderless accented))
-(load-theme vy/theme t)
+(if vy/theme
+    (load-theme vy/theme t))

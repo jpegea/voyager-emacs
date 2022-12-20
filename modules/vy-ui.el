@@ -19,7 +19,13 @@
 	      ("C-c p" . projectile-command-map)))
 
 (use-package minions
-  :config (minions-mode t))
+  :defer t
+  :disabled
+  :init (minions-mode t))
+
+(use-package diminish
+  :disabled
+  :defer t)
 
 (use-package dashboard
   :defer t
@@ -45,5 +51,11 @@
   ;; 			  ("Projects:" . "Projectes:")))
   (dashboard-set-init-info nil)
   (dashboard-show-shortcuts nil))
+
+;; THEMES
+(use-package doom-themes
+  :defer t)
+(use-package ef-themes
+  :defer t)
 
 (provide 'vy-ui)

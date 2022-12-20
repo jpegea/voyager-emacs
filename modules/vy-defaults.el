@@ -29,4 +29,10 @@
   (use-package powershell
     :defer t))
 
+
+;; Some keys
+(global-set-key (kbd "C-S-x o") 'other-frame)
+(global-set-key (kbd "C-S-r") 'query-replace)
+
+
 (provide 'vy-defaults)
