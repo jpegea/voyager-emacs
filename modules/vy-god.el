@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
-(use-package god-mode)
-(global-set-key (kbd "<escape>") #'god-mode)
-(global-set-key (kbd "C-.") #'god-mode)
+(use-package god-mode
+  :bind
+  ("<escape>" . #'god-mode))
 
 (provide 'vy-god)
