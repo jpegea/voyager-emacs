@@ -34,5 +34,18 @@
 (global-set-key (kbd "C-S-x o") 'other-frame)
 (global-set-key (kbd "C-S-r") 'query-replace)
 
+(defun goto-top-line ()
+  "Go to the first line of the buffer."
+  (interactive)
+  (goto-line 1))
+
+(defun goto-bottom-line ()
+  "Go to the last line of the buffer."
+  (interactive)
+  (let ((lines (count-lines (point-min) (point-max))))
+    (goto-line lines)))
+
+(global-set-key (kbd "M-g t") #'goto-top-line)
+(global-set-key (kbd "M-g b") #'goto-bottom-line)
 
 (provide 'vy-defaults)
