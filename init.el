@@ -61,6 +61,10 @@
 (when (file-exists-p voyager-config-file)
   (load voyager-config-file nil 'nomessage))
 
+;; Load theme
+(if vy/theme
+    (load-theme vy/theme t)
+  (load-theme 'modus-vivendi t))
 
 ;; custom.el
 (setq custom-file (expand-file-name "custom.el" voyager-config-path))

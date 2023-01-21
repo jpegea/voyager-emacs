@@ -18,8 +18,6 @@
 
 ;; Tema predeterminat
 (defvar vy/theme
-  ;; (if (>= 28.1 (string-to-number emacs-version))
-  ;;     'modus-operandi)
   nil
   "Voyager Emacs theme.")
 
@@ -40,6 +38,9 @@
 ;; If you're using Termux change this in your personal config.
 (defvar ON-TERMUX nil
   "Non-nil if running on Termux.")
+
+;; Modus theme options
+(setq modus-themes-mode-line '(borderless accented))
 
 ;; Personal config path
 (defvar voyager-config-path
@@ -68,6 +69,5 @@
 
 
 ;; Load Voyager's theme
-(setq modus-themes-mode-line '(borderless accented))
 (if vy/theme
     (load-theme vy/theme t))

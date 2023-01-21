@@ -19,6 +19,8 @@
     (setq use-short-answers t)
   (advice-add 'yes-or-no-p :override #'y-or-n-p))
 
+;; Global visual line
+(global-visual-line-mode)
 
 ;; Show column number and matching parens
 (column-number-mode t)
