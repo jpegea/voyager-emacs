@@ -20,7 +20,6 @@
 
 (use-package minions
   :defer t
-  :disabled
   :init (minions-mode t))
 
 (use-package diminish

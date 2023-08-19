@@ -23,18 +23,16 @@
   :bind (:map LaTeX-mode-map
 	      ("C-<return>" . TeX-save-compile-and-clean)
 	      ("C-c M-q" . LaTeX-fill-paragraph)
-	      ("C-c C-S-e" . LaTeX-change-environment))
+	      ("C-c C-S-e" . LaTeX-change-environment)
+	      ("C-c i" . indent-region)
+	      ("C-c C-f b" . LaTeX-find-matching-begin)
+	      ("C-c C-f e" . LaTeX-find-matching-end))
 
   :config
   (defun TeX-save-compile-and-clean ()
     (interactive)
     (save-buffer)
     (TeX-command "LaTeX" 'TeX-master-file))
-
-  (defun LaTeX-change-environment ()
-    (interactive)
-    (LaTeX-find-matching-begin)
-    (LaTeX-find-matching-end))
 
   (company-auctex-init))
 
