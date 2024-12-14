@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
+(setq-default tab-width 4) ;; Set 4 spaces for tabs instead of 8
+
 (add-hook 'prog-mode-hook (lambda ()
 			    (display-line-numbers-mode)
 			    (hl-line-mode)
@@ -36,7 +38,7 @@
   :defer t
   :config
   (setq lsp-keymap-prefix "C-c l")
-  (lsp-enable-which-key-integration t)
+  ;; (lsp-enable-which-key-integration t)
   :custom
   (lsp-headerline-breadcrumb-enable nil))
 
