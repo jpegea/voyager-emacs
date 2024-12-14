@@ -13,19 +13,6 @@
   (when ON-LINUX
     (pulsar-global-mode t)))
 
-(use-package projectile
-  :config (projectile-mode t)
-  :bind (:map projectile-mode-map
-	      ("C-c p" . projectile-command-map)))
-
-(use-package minions
-  :defer t
-  :init (minions-mode t))
-
-(use-package diminish
-  :disabled
-  :defer t)
-
 (use-package dashboard
   :defer t
 
@@ -54,7 +41,13 @@
 ;; THEMES
 (use-package doom-themes
   :defer t)
+
 (use-package ef-themes
   :defer t)
+
+(use-package doom-modeline
+  :defer t
+  :init (doom-modeline-mode)
+  :if (display-graphic-p))
 
 (provide 'vy-ui)
