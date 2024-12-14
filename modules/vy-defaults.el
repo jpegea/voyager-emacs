@@ -45,7 +45,8 @@
   "Go to the last line of the buffer."
   (interactive)
   (let ((lines (count-lines (point-min) (point-max))))
-    (goto-line lines)))
+    (goto-line lines))
+  (end-of-line))
 
 (global-set-key (kbd "M-g t") #'goto-top-line)
 (global-set-key (kbd "M-g b") #'goto-bottom-line)
