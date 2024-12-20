@@ -2,6 +2,7 @@
 
 ;; Use spaces instead tabs
 (setq indent-tabs-mode nil)
+(setq tab-always-indent nil)
 
 ;; Do not make backup files
 (setq make-backup-files nil) ;; Ojo
