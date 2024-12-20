@@ -14,9 +14,6 @@
   :init
   (require 'git-commit))
 
-(use-package flycheck
-  :defer t)
-
 (use-package yasnippet
   :ensure yasnippet-snippets
   :config
@@ -29,16 +26,15 @@
   :hook (lsp-mode . company-mode)
   :bind
   (:map company-active-map
-	("<tab>" . company-complete-selection))
-  ;; (:map lsp-mode-map
-  ;; 	("<tab>" . company-indent-or-complete-common))
-  )
+		("<tab>" . company-complete-selection)))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 
 (use-package lsp-mode
   :defer t
   :config
   (setq lsp-keymap-prefix "C-c l")
-  ;; (lsp-enable-which-key-integration t)
   :custom
   (lsp-headerline-breadcrumb-enable nil))
 
@@ -48,18 +44,16 @@
   :config
   (lsp-ui-doc-enable t))
 
+(use-package flycheck
+  :ensure t)
+
 (use-package treemacs
   :ensure treemacs-all-the-icons
-  :ensure treemacs-projectile
   :ensure lsp-treemacs
   :config
   (require 'treemacs-all-the-icons)
   (treemacs-load-theme "all-the-icons")
   :bind ("C-c o p" . treemacs)
   :custom (treemacs-width 27))
-
-(use-package tree-sitter
-  :defer t
-  :ensure tree-sitter-langs)
 
 (provide 'vy-prog)
