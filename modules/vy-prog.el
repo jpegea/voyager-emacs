@@ -40,12 +40,10 @@
 
 (use-package lsp-ui
   :after lsp-mode
-  :hook (lsp-mode . lsp-ui-mode)
-  :config
-  (lsp-ui-doc-enable t))
+  :hook (lsp-mode . lsp-ui-mode))
 
 (use-package flycheck
-  :ensure t)
+  :defer t)
 
 (use-package treemacs
   :ensure treemacs-all-the-icons
