@@ -1,9 +1,9 @@
 ;; -*- lexical-binding: t; -*-
 
-;; (use-package python-mode
-;;   :ensure nil
-;;   :custom
-;;   (pyhton-shell-interpreter "python3"))
+(use-package python
+  :ensure nil
+  :custom
+  (pyhton-shell-interpreter "python3"))
 
 (use-package lsp-pyright
   :ensure t
