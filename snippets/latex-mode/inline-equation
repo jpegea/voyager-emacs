@@ -2,4 +2,4 @@
 # name: Inline equation 
 # key:ie
 # --
-\$$1\$$0
+\\($1\\)$0
