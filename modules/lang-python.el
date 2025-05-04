@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
-(use-package python
-  :ensure nil
+(use-package python-mode
+  :ensure t
   :custom
   (pyhton-shell-interpreter "python3"))
 
