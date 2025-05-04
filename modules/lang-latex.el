@@ -9,11 +9,12 @@
   (TeX-master nil)
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
+  (TeX-command-extra-options "-shell-escape")
   ; (LaTeX-indent-level 4)
   (LaTeX-verbatim-environments '("verbatim" "verbatim*" "Verbatim" "Verbatim*" "filecontents" "filecontents*" "lstlisting"))
 
   :hook
-  (LaTeX-mode . turn-on-auto-fill)
+  ;; (LaTeX-mode . turn-on-auto-fill)
   (LaTeX-mode . turn-on-reftex)
   (LaTeX-mode . yas-minor-mode-on)
   (LaTeX-mode . company-mode)
