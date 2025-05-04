@@ -10,7 +10,6 @@
 (add-hook 'emacs-lisp-mode-hook #'prettify-symbols-mode)
 
 (use-package magit
-  :defer t
   :init
   (require 'git-commit))
 
@@ -47,7 +46,6 @@
 
 (use-package treemacs
   :ensure treemacs-all-the-icons
-  :ensure lsp-treemacs
   :config
   (require 'treemacs-all-the-icons)
   (treemacs-load-theme "all-the-icons")
