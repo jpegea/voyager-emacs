@@ -10,7 +10,7 @@
   (TeX-debug-bad-boxes t)
   (TeX-debug-warnings t)
   (TeX-command-extra-options "-shell-escape")
-  ; (LaTeX-indent-level 4)
+  (TeX-output-dir "output")
   (LaTeX-verbatim-environments '("verbatim" "verbatim*" "Verbatim" "Verbatim*" "filecontents" "filecontents*" "lstlisting"))
 
   :hook
@@ -18,7 +18,7 @@
   (LaTeX-mode . turn-on-reftex)
   (LaTeX-mode . yas-minor-mode-on)
   (LaTeX-mode . company-mode)
-  (LaTeX-mode . display-line-numbers-mode)
+  ;; (LaTeX-mode . display-line-numbers-mode)
   (LaTeX-mode . toggle-word-wrap)
   ;; (LaTeX-mode . hl-line-mode)
 
